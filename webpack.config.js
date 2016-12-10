@@ -1,16 +1,19 @@
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require("path");
-var HtmlWebpackPlugin =  require('html-webpack-plugin');
-module.exports = {
-  entry: {
-    app: ["./main.js"]
+
+var conf = {
+ entry: './app/main.js',
+ output: {
+    path: path.join(__dirname, 'build'),
+    filename: './bundle.js'
   },
-  output: {
-    path: './',
-    filename: "bundle.js"
-  },
-  plugins: [
+   plugins: [
         new HtmlWebpackPlugin({
             template: './index.html'
         })
     ]
 };
+
+module.exports = conf;
+
