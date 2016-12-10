@@ -1,3 +1,2 @@
 
-x = 3;   
-y = 33; 
+console.log('bi3');
