@@ -3,14 +3,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require("path");
 
 var conf = {
- entry: './app/main.js',
+ entry: './src/main.js',
  output: {
-    path: path.join(__dirname, 'build'),
+    //path: path.join(__dirname, 'build'),
     filename: './bundle.js'
   },
    plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './src/index.html'
         })
     ]
 };
