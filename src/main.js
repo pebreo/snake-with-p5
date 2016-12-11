@@ -1,23 +1,20 @@
+require('p5');
 
-function setup()
-{
-    createCanvas(600,600);
+var sketch = function (p) {
+  var gray = 0; 
 
-}
-function draw()
-{
-    background(51);
-}
+  p.setup = function () {
+    p.createCanvas(600, 400);
+  };
 
-function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    console.log('up');
-  } else if (keyCode === DOWN_ARROW) {
-    
-  } else if (keyCode === RIGHT_ARROW) {
-    
-  } else if (keyCode === LEFT_ARROW) {
-    
-  }
-}
-console.log('bi');
+  p.draw = function () {
+    p.background(gray);
+    p.rect(p.width/2, p.height/2, 200, 200);
+  };
+
+  p.mousePressed = function () {
+    gray = (gray + 16) % 256;
+  };
+};
+
+new p5(sketch);
